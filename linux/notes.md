@@ -1,18 +1,109 @@
 # Commands
 
+## System characteristics
+
+- neofetch
+- cat /etc/\*-release
+- lsb_release -a
+- cat /etc/issue
+- uname -a
+
+## Exec commans in background
+
+- _command_ &
+- [ctrl] + z: send current command to background, to restore:
+- fg: is used to restore the execution of comman to foreground.
+
+## Process in execution
+
+- ps ax: all process running.
+- top: show in real time al process.
+
+## Stop process
+
+- kill -9 [PID]: stops immediately the process
+- killall [executable file name]: stops the process
+
+## Permissions and owners
+
+- chmod: it change file mode, it change individuali persmissions.
+    
+    - u: owner user
+    - g: group
+    - o: others
+    - a: all
+    - examples: add read permissions: o+r, remove that permissions: o-r
+    
+    - - = 0
+    - x = 1
+    - w = 2
+    - r = 4
+    - Permisos del usuario propietario: r (4) + w (2) + x (1) = 7.
+    - Permisos del grupo al que pertenece el archivo: r (4) + x (1) = 5.
+    - Permisos del grupo al que pertenece el archivo: r (4) = 4.
+
+
+- chown: it change file owner.
+    - sudo chown _user_ file
+    - sudo chown _user_:_group_ file
+    
+- chgrp: it change file group wner.
+
+## Downloads
+
 - curl url -o filename: descargar un archivo
 
-- zip nombre.zip archivos_a_comprimir: comprimir archivos en zip.
+## Compress uncompress
 
-- unzip -vl archivo.zip: muestrar los archivos del zip.
-- unzip archivo.zip: descomprimir archivo
+- zip _nombre.zip_ _archivosAcomprimir_: comprimir archivos en zip.
 
-- tar cfz nombre.tar.gz archivos_a_comprimir: comprimir archivos en tar
-- tar xfz nombre.tar.gz
+- unzip -vl _archivo.zip_: muestrar los archivos del zip.
+- unzip _archivo.zip_: descomprimir archivo
 
+- tar cfz _nombre.tgz_ _archivosAcomprimir_: comprimir archivos en tar.
+- tar xfz _nombre.tgz_: extraer.
+- tar tf file: ver el contenido del comprimido.
+
+- gzip _file_: comprime archivo, elimina el original.
+- gzip -d _file.gz_: escomprimer archivo, elimina el original.
+
+## Redirect string
+
+- 0<: stdin standart in
 - 1>: stdout standart out
 - 2>: stderr standar error
 - 1>&2: redirigir ambas salidas al mismo lugar
+
+# Operators
+
+## operador | (pipe):
+
+- command_1 | command_2: Manda el STDOUT de command_1 al STDIN de command_2
+
+## operador >
+
+- command_1 > FILE: Manda el STDOUT de command_1 al inicio de FILE. Si FILE no existe lo crea, si existe losobreescribe.
+
+## operador >>
+
+- command_1 >> FILE: Manda el STDOUT de command_1 al inicio de FILE. Si FILE no existe lo crea, si existe lo concatena al final(tras un _newline_).
+
+## operador <
+
+command_1 < FILE: Manda al STDIN de command_1 el contenido de FILE.
+
+## redirección de salida
+
+- command > FILE - manda el STDOUT a FILE
+- command 1> FILE 2>FILE_ERROR - manda el STDOUT a FILE y el STDERR a
+FILE_ERROR
+- command > FILE 2>&1 - manda, tanto el STDOUT como el STDERR a FILE
+- command >> FILE 2>&1 - manda a concatenar las salidas de STDOUT y STDERR a FILE
+
+# Combinación de teclas como comando
+
+- [ctrl]-C - este comando termina el proceso que se está ejecutando en la terminal, haya o noacabado de ejecutarse.
+- [ctrl]-D - el sistema lo interpreta como _EOF_ (End Of File) y cierra el _stream_ de entrada(STDIN) para un archivo en donde se está escribiendo desde la termina.
 
 ## Show files in directory
 
@@ -81,37 +172,6 @@
 
 - open [-a APP] [ FILE | DIRECTORY ]: abre el (archivo o directorio) con la aplicaciÃ³n pordefecto en elsistema operativo, si se manda la bandera -a usarÃ¡ la APP para abrirl
 
-# Operators
-
-## operador | (pipe):
-
-- command_1 | command_2: Manda el STDOUT de command_1 al STDIN de command_2
-
-## operador >
-
-- command_1 > FILE: Manda el STDOUT de command_1 al inicio de FILE. Si FILE no existe lo crea, si existe losobreescribe.
-
-## operador >>
-
-- command_1 >> FILE: Manda el STDOUT de command_1 al inicio de FILE. Si FILE no existe lo crea, si existe lo concatena al final(tras un _newline_).
-
-## operador <
-
-command_1 < FILE: Manda al STDIN de command_1 el contenido de FILE.
-
-## redirección de salida
-
-- command > FILE - manda el STDOUT a FILE
-- command 1> FILE 2>FILE_ERROR - manda el STDOUT a FILE y el STDERR a
-FILE_ERROR
-- command > FILE 2>&1 - manda, tanto el STDOUT como el STDERR a FILE
-- command >> FILE 2>&1 - manda a concatenar las salidas de STDOUT y STDERR a FILE
-
-# Combinación de teclas como comando
-
-- [ctrl]-C - este comando termina el proceso que se está ejecutando en la terminal, haya o noacabado de ejecutarse.
-- [ctrl]-D - el sistema lo interpreta como _EOF_ (End Of File) y cierra el _stream_ de entrada(STDIN) para un archivo en donde se está escribiendo desde la termina.
-
 # Crontab
 
 - crontab -l: enlista las tarea programadas.
@@ -124,30 +184,30 @@ FILE_ERROR
 
 # Text files
 
-## head
+# head
 
 - head [FILE]: show first 10 lines of a text file.
 - head -n5 [FILE]: show first 5 lines of a text file.
 
-## tail
+# tail
 
 - tail [FILE]: show last 10 lines of a text file.
 - tail -f [FILE]: tail forever, show 10 last lines, but not close de file, so show the last changes in that file. 
 - tail -n5: show las 5 lines of a text file.
 
-## more
+# more
 
 - more [FILE]: more is a filter for paging through text one screenful at a time.  This version is especially primitive.  Users  should  realize  that  less(1) provides more(1) emulation plus extensive enhancements.
 
-## less
+# less
 
 - less [FILE]: Less is a program similar to more (1), but it has many  more  features. Less  does  not  have to read the entire input file before starting, so with large input files it starts up faster than text  editors  like  vi(1).  Less uses termcap (or terminfo on some systems), so it can run on a variety of terminals.  There is even  limited  support  for  hardcopy terminals.   (On  a hardcopy terminal, lines which should be printed at the top of the screen are prefixed with a caret.)
 
-## cat
+# cat
 
 - cat [FILE]: Concatenate FILE(s) to standard output.
 
-## sed (string editor)
+# sed (string editor)
 
 **Modifica el flujo de datos no el contenido de su fuente.**
 
@@ -159,24 +219,126 @@ FILE_ERROR
 - sed 's/expresion/expresion/g' [FILE]: sustituye una expresión por otra en un flujo de datos, quiere decir que no modifica el contenido del cual proviene el flujo. s indica la sustitución. g que se realice la acción a lo largo del texto.
 sed '$d' [file]: delete last line. 
 
-## grep
+# grep
+
+Find expressions in files or stdout.
 
 - grep -rni [directory] -e "expresion": buscar en un directorio, recursivamente, una expresiÃ³n en los archivos
 - grep -rni "expresion" [directory/file]: search a expresión in file or directory. -i is for case insentisive. -r for recursive. -n show lines numbers. 
 - grep -v expresion: excluir expresión buscada.
 
-## awk
+# awk
 
 - awk -F ';' '{ print $1 }' [FILE.scv]: ';' indica un delimitador, '{ pirnt $1 }' selecciona la primera columna. El comando imprimer la primera columa de un archivo delimitado por ;
-awk -F ';' 'NR > 1 && $3 >0 { print $1, $3 * $4 }' [FILE.scv]: imprime después de la línea 1, la columna 1 y en una segunda columna pone el producto de la dolumna 3 por la 4.
+- awk -F ';' 'NR > 1 && $3 >0 { print $1, $3 * $4 }' [FILE.scv]: imprime después de la línea 1, la columna 1 y en una segunda columna pone el producto de la dolumna 3 por la 4.
+- awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr: ips que ingresan al sitio en nginx, organizadas y elimina las repetidas. 
 
 # Find files
 
 ## find
 
+### Syntax
+
+- find <startingdirectory> <options> <search term>
+    - <startingdirectory>: es el punto de origen de donde deseas iniciar la búsqueda.
+    - <options>: filtro que deseas usar para buscar tu archivo.
+    - <search term>: este tercer argumento es una continuación del segundo, donde se especificará el término de búsqueda relevante. 
+
+### By Name
+
 - find directorio -name "expresion+wildcard" typo typoDeArchivo/f: buscar en un directorio, por el nombre de una expresión, en un archivo.
 - fin [directorio] -type f : en el directorio seleccionado busca elementos tipo archivo.
-- fin /var/log -name "*.log" -type f: busca en la ruta todos los archivos que en su nombre tenga .log
-- find /var/log -iname "*.LOG" -type f: busca en la ruta todos los archivos que en su nombre tenga .log sin importar las mayúsculas o minúsculas.
-- find /var/log ! -iname "*.LOG" -type f: todos los archivos que no tengan extensión .log.
+- fin /var/log -name "\*.log" -type f: busca en la ruta todos los archivos que en su nombre tenga .log
+- find /var/log -iname "\*.LOG" -type f: busca en la ruta todos los archivos que en su nombre tenga .log sin importar las mayúsculas o minúsculas.
+- find /var/log ! -iname "\*.LOG" -type f: todos los archivos que no tengan extensión .log.
+- find _dir_ -not -iname "\*.LOG" -type f: como el anterior.
+- fin _dir_ -name "_expression_" -delete: elimina el archivo encontrado.
+
+### By Date Time
+
+- find _dir_ -mtime 10: Encuentra archivos con cambios en los últimos 10 minutos.
+
+- -atime: Tiempo de acceso. Fecha más reciente en que el archivo fue leído o escrito, en días.
+- -mtime: Tiempo de modificación. Fecha más reciente en que se modificó el archivo.
+- -ctime: Hora de cambio. Fecha más reciente en que se actualizaron los metadatos del archivo.
+
+- find _dir_ -atime 1: encontrará todos los archivos a los que se accedió hace un día desde el momento actual. Esto significa que se listarán todos los archivos que fueron leídos y/o escritos desde el día anterior.
+- find _dir_ -mtime +2: Podemos hacer que nuestras consultas sean más precisas con los signos más (+) y menos (¿) precediendo al número de días. Esto listará todos los archivos que tienen un tiempo de modificación de más de dos días.
+
+- <time-descriptor>min: busca cuántos minutos han pasado
+- find _dir_ -mmin -1: Esto buscará archivos que se modificaron hace menos de un minuto. 
+
+- -newer: se puede usar para comparar la antigüedad de dos archivos y encontrar el más reciente.
+
+### By User and Permissions
+
+- find _dir_ -user _user_ -perm _644_: busca archivos de un usuario con determinados permisos.
+- find _dir_ -group _group_
+- find _dir_ -perm -644: Esto mostrará todos los archivos que tengan al menos el permiso 644.
+
+### By Type
+
+- find _dir_ -type [TYPE]: Busca por tipo de archivo:
+    - f: archivo normal
+    - d: directorio o carpeta
+    - l: enlace simbólico
+    - c: dispositivos de caracteres
+    - b: dispositivos de bloque
+- find _dir_ -type f -mtime +7: busca elementos tipo file modificados hace más de 7 días.
+- find _dir_ -type f -mtime +7 -exec cp {} _dirTarget_ \;
+- find _dir_ -type f -name "_expresion_"
+- find _dir_ -size [type]: buscar por tamaño
+    - c: bytes
+    - k: kilobytes
+    - M: meabytes
+    - b:trozos de 512 bytes
+    - find ./ -size 200M: encuentra archivos de 200M
+    - find ./ -size +200M: encuentra archivos de más de 200M
+    - find ./ -size -200M:
+    - find ./ -size200M -type f
+
+### Exec
+
+- find _dir_ -exec: buscar todos los ejecutables guardados en tu disco, utiliza la opción -exec.
+
+### Read
+
+- find _dir_ -read: buscar archivos legibles.
+
+## Utils
+
+- find _dir_ -empty: Buscar archivos y carpetas vacíos.
+
+## Locate
+
+- locate _file_: busca un archivo en el sistema de archivos, y funciona mediante una base de datos que debe ser actualizada.
+    - sudo updatedb: actualiza la base de datos de archivos.
+- locate -b _file_: Puedes usar el argumento -b para una búsqueda más específica. Solo buscará el ¿nombre base¿ del archivo, enumerando efectivamente solo los archivos que tienen el término de búsqueda en lugar de devolver los directorios que conducen a los archivos.
+    - -e muestra entradas de archivos existentes en el momento en que se ejecuta el comando locate.
+    - -q inhabilita la visualización de errores encontrados en el proceso de búsqueda.
+    - -c muestra la cantidad de archivos que coinciden, en lugar de los nombres de los archivos.
+- sudo updatedb: actualizar base de datos de archivos.
+
+# whereis
+
+- whereis: busca binaros, es decir, comandos.
+
+# Sort files
+
+- Write sorted concatenation of all FILE(s) to standard output.
+- With no FILE, or when FILE is -, read standard input.
+- sort [OPTION]... [FILE]...
+- sort [OPTION]... --files0-from=F
+
+# Uniques
+
+- Filter  adjacent matching lines from INPUT (or standard input), writing to OUTPUT (or standard output). 
+- With no options, matching lines are merged to the first occurrence.
+- uniq [OPTION]... [INPUT [OUTPUT]]
+
+# Send files
+
+## rsync
+
+- rsync -avz $(pwd) $user@$host:/home/quattroc/Descargas/transf
 
