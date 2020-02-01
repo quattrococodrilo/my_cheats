@@ -1,0 +1,116 @@
+Linux Command Line Cheat Sheet by DaveChild
+
+A cheat sheet of the commands I use most for Linux, with popup links to man
+pages.
+bash     nano     linux     ls     commandline     ubuntu     server     
+sysadmin     shell
+
+Bash Commands              Directory Operations       Nano Shortcuts
+                                                      
+uname -a   Show system     pwd    Show current        Files
+           and kernel             directory           Ctrl-R Read file
+head -n1 / Show distri     mkdir  Make directory      Ctrl-O Save file
+etc/issue  bution          dir    dir                 Ctrl-X Close file
+mount      Show mounted    cd dir Change directory    Cut and Paste
+           filesystems            to dir              ALT-A  Start marking
+date       Show system     cd ..  Go up a directory          text
+           date            ls     List files          CTRL-K Cut marked text
+uptime     Show uptime     [INS::INS]                        or line
+whoami     Show your                                  CTRL-U Paste text
+           username        ls Options                 Navigate File
+man        Show manual                                ALT-/  End of file
+command    for command     -a Show all (including     CTRL-A Beginning of line
+                              hidden)                 CTRL-E End of line
+Bash Shortcuts             -R Recursive list          CTRL-C Show line number
+                           -r Reverse order           CTRL-_ Go to line number
+CTRL-c Stop current        -t Sort by last modified   Search File
+       command             -S Sort by file size       CTRL-W Find
+CTRL-z Sleep program       -l Long listing format     ALT-W  Find next
+CTRL-a Go to start of      -1 One file per line       CTRL-\ Search and
+       line                -m Comma-separated                replace
+CTRL-e Go to end of line      output                  More nano info at:
+CTRL-u Cut from start of   -Q Quoted output           http://www.nano-editor.o
+       line                                           rg/docs.php
+CTRL-k Cut to end of       Search Files               
+       line                                           Screen Shortcuts
+CTRL-r Search history      grep    Search for         
+!!     Repeat last         pattern pattern in files   screen
+       command             files                      Start a screen session.
+!abc   Run last command    grep -i Case insensitive   screen -r
+       starting with abc           search             Resume a screen session.
+!abc:p Print last          grep -r Recursive search   screen -list
+       command starting    grep -v Inverted search    Show your current screen
+       with abc            grep -o Show matched       sessions.
+!$     Last argument of            part of file       CTRL-A
+       previous command            only               Activate commands for
+ALT-.  Last argument of    find /  Find files         screen.
+       previous command    dir/    starting with      CTRL-A c
+!*     All arguments of    -name   name in dir        Create a new instance of
+       previous command    name*                      terminal.
+^abc^  Run previous        find /  Find files owned   CTRL-A n
+123    command,            dir/    by name in dir     Go to the next instance
+       replacing abc       -user                      of terminal.
+       with 123            name                       CTRL-A p
+                           find /  Find files         Go to the previous
+Bash Variables             dir/    modifed less       instance of terminal.
+                           -mmin   than num minutes   CTRL-A "
+env      Show enviro       num     ago in dir         Show current instances
+         nment variables   whereis Find binary /      of terminals.
+echo     Output value of   command source / manual    CTRL-A A
+$NAME    $NAME variable            for command        Rename the current
+export   Set $NAME to      locate  Find file (quick   instance.
+NAME=    value             file    search of system   More screen info at:
+value                              index)             http://www.gnu.org/softw
+$PATH    Executable                                   are/screen/
+         search path       File Operations            
+$HOME    Home directory                               File Permissions
+$SHELL   Current shell     touch file1                
+                           Create file1               chmod 775 file
+IO Redirection             cat file1 file2            Change mode of file to
+                           Concatenate files and      775
+cmd < file                 output                     chmod -R 600 folder
+Input of cmd from file     less file1                 Recursively chmod folder
+cmd1 <(cmd2)               View and paginate file1    to 600
+Output of cmd2 as file     file file1                 chown user:group file
+input to cmd1              Get type of file1          Change file owner to
+cmd > file                 cp file1 file2             user and group to group
+Standard output (stdout)   Copy file1 to file2        
+of cmd to file             mv file1 file2             File Permission Numbers
+cmd > /dev/null            Move file1 to file2        
+Discard stdout of cmd      rm file1                   First digit is owner
+cmd >> file                Delete file1               permission, second is
+Append stdout to file      head file1                 group and third is
+cmd 2> file                Show first 10 lines of     everyone.
+Error output (stderr) of   file1                      Calculate permission
+cmd to file                tail file1                 digits by adding numbers
+cmd 1>&2                   Show last 10 lines of      below.
+stdout to same place as    file1                      4  read (r)
+stderr                     tail -F file1              2  write (w)
+cmd 2>&1                   Output last lines of       1  execute (x)
+stderr to same place as    file1 as it changes
+stdout                     
+cmd &> file                Watch a Command
+Every output of cmd to     
+file                       watch -n 5 'ntpq -p'
+cmd refers to a command.   Issue the 'ntpq -p'
+                           command every 5 seconds
+Pipes                      and display output
+                           
+cmd1 | cmd2                Process Management
+stdout of cmd1 to cmd2     
+cmd1 |& cmd2               ps      Show snapshot of
+stderr of cmd1 to cmd2             processes
+                           top     Show real time
+Command Lists                      processes
+                           kill    Kill process
+cmd1 ; cmd2                pid     with id pid
+Run cmd1 then cmd2         pkill   Kill process
+cmd1 && cmd2               name    with name name
+Run cmd2 if cmd1 is        killall Kill all
+successful                 name    processes with
+cmd1 || cmd2                       names beginning
+Run cmd2 if cmd1 is not            name
+successful
+cmd &
+Run cmd in a subshell
+

@@ -1,0 +1,865 @@
+Show Menu
+[INS::INS]
+
+Cheatography[                    ]     
+
+[]   
+
+  * Your Favourite Cheat Sheets
+  * Your Favourite Lists
+
+  * Your Messages
+  * Your Badges
+  * Your Friends
+  * Your Comments
+
+  * View Profile
+  * Edit Profile
+  * Change Password
+
+  * Log out
+
+  * New Cheat Sheet
+  * New Link
+  * New Upload
+  * New List
+
+  * Live Cheat Sheets
+  * Draft Cheat Sheets
+  * Collaborations
+  * Links
+
+  * Cheat Sheet Lists
+
+Login  or  Register
+
+  * Home
+  * Login
+  * Register
+  * Cheat Sheets
+      + New Cheat Sheets
+      + Popular Cheat Sheets
+      + Cheat Sheets by Topic
+      + Cheat Sheets by Tag
+      + Cheat Sheets by Language
+      + Cheat Sheets Lists
+      + Cheat Sheet Links
+  * Create
+      + Getting Started
+      + Create a New Cheat Sheet
+      + Upload a Cheat Sheet
+      + Link to a Cheat Sheet
+      + New Cheat Sheet List
+      + A Cheat Sheet for Making Cheat Sheets!
+  * Community
+      + Community
+      + Blog
+      + Badges
+      + Friends
+      + Join Us!
+      + Login
+      + Twitter
+      + Facebook
+      + Pinterest
+      + Instagram
+  * Help
+      + General Help Information
+      + Cheatography Support
+      + Take the Tour!
+
+  * Download This Cheat Sheet (PDF)
+
+  * 64 Comments
+  * Rating: ( )
+  *  
+
+Linux Command Line Cheat Sheet by DaveChild
+
+A cheat sheet of the commands I use most for Linux, with popup links to man
+pages.
+bash     nano     linux     ls     commandline     ubuntu     server     
+sysadmin     shell
+
+Bash Commands              Directory Operations       Nano Shortcuts
+                                                      
+uname -a   Show system     pwd    Show current        Files
+           and kernel             directory           Ctrl-R Read file
+head -n1 / Show distri     mkdir  Make directory      Ctrl-O Save file
+etc/issue  bution          dir    dir                 Ctrl-X Close file
+mount      Show mounted    cd dir Change directory    Cut and Paste
+           filesystems            to dir              ALT-A  Start marking
+date       Show system     cd ..  Go up a directory          text
+           date            ls     List files          CTRL-K Cut marked text
+uptime     Show uptime     [INS::INS]                        or line
+whoami     Show your                                  CTRL-U Paste text
+           username        ls Options                 Navigate File
+man        Show manual                                ALT-/  End of file
+command    for command     -a Show all (including     CTRL-A Beginning of line
+                              hidden)                 CTRL-E End of line
+Bash Shortcuts             -R Recursive list          CTRL-C Show line number
+                           -r Reverse order           CTRL-_ Go to line number
+CTRL-c Stop current        -t Sort by last modified   Search File
+       command             -S Sort by file size       CTRL-W Find
+CTRL-z Sleep program       -l Long listing format     ALT-W  Find next
+CTRL-a Go to start of      -1 One file per line       CTRL-\ Search and
+       line                -m Comma-separated                replace
+CTRL-e Go to end of line      output                  More nano info at:
+CTRL-u Cut from start of   -Q Quoted output           http://www.nano-editor.o
+       line                                           rg/docs.php
+CTRL-k Cut to end of       Search Files               
+       line                                           Screen Shortcuts
+CTRL-r Search history      grep    Search for         
+!!     Repeat last         pattern pattern in files   screen
+       command             files                      Start a screen session.
+!abc   Run last command    grep -i Case insensitive   screen -r
+       starting with abc           search             Resume a screen session.
+!abc:p Print last          grep -r Recursive search   screen -list
+       command starting    grep -v Inverted search    Show your current screen
+       with abc            grep -o Show matched       sessions.
+!$     Last argument of            part of file       CTRL-A
+       previous command            only               Activate commands for
+ALT-.  Last argument of    find /  Find files         screen.
+       previous command    dir/    starting with      CTRL-A c
+!*     All arguments of    -name   name in dir        Create a new instance of
+       previous command    name*                      terminal.
+^abc^  Run previous        find /  Find files owned   CTRL-A n
+123    command,            dir/    by name in dir     Go to the next instance
+       replacing abc       -user                      of terminal.
+       with 123            name                       CTRL-A p
+                           find /  Find files         Go to the previous
+Bash Variables             dir/    modifed less       instance of terminal.
+                           -mmin   than num minutes   CTRL-A "
+env      Show enviro       num     ago in dir         Show current instances
+         nment variables   whereis Find binary /      of terminals.
+echo     Output value of   command source / manual    CTRL-A A
+$NAME    $NAME variable            for command        Rename the current
+export   Set $NAME to      locate  Find file (quick   instance.
+NAME=    value             file    search of system   More screen info at:
+value                              index)             http://www.gnu.org/softw
+$PATH    Executable                                   are/screen/
+         search path       File Operations            
+$HOME    Home directory                               File Permissions
+$SHELL   Current shell     touch file1                
+                           Create file1               chmod 775 file
+IO Redirection             cat file1 file2            Change mode of file to
+                           Concatenate files and      775
+cmd < file                 output                     chmod -R 600 folder
+Input of cmd from file     less file1                 Recursively chmod folder
+cmd1 <(cmd2)               View and paginate file1    to 600
+Output of cmd2 as file     file file1                 chown user:group file
+input to cmd1              Get type of file1          Change file owner to
+cmd > file                 cp file1 file2             user and group to group
+Standard output (stdout)   Copy file1 to file2        
+of cmd to file             mv file1 file2             File Permission Numbers
+cmd > /dev/null            Move file1 to file2        
+Discard stdout of cmd      rm file1                   First digit is owner
+cmd >> file                Delete file1               permission, second is
+Append stdout to file      head file1                 group and third is
+cmd 2> file                Show first 10 lines of     everyone.
+Error output (stderr) of   file1                      Calculate permission
+cmd to file                tail file1                 digits by adding numbers
+cmd 1>&2                   Show last 10 lines of      below.
+stdout to same place as    file1                      4  read (r)
+stderr                     tail -F file1              2  write (w)
+cmd 2>&1                   Output last lines of       1  execute (x)
+stderr to same place as    file1 as it changes
+stdout                     
+cmd &> file                Watch a Command
+Every output of cmd to     
+file                       watch -n 5 'ntpq -p'
+cmd refers to a command.   Issue the 'ntpq -p'
+                           command every 5 seconds
+Pipes                      and display output
+                           
+cmd1 | cmd2                Process Management
+stdout of cmd1 to cmd2     
+cmd1 |& cmd2               ps      Show snapshot of
+stderr of cmd1 to cmd2             processes
+                           top     Show real time
+Command Lists                      processes
+                           kill    Kill process
+cmd1 ; cmd2                pid     with id pid
+Run cmd1 then cmd2         pkill   Kill process
+cmd1 && cmd2               name    with name name
+Run cmd2 if cmd1 is        killall Kill all
+successful                 name    processes with
+cmd1 || cmd2                       names beginning
+Run cmd2 if cmd1 is not            name
+successful
+cmd &
+Run cmd in a subshell
+
+How's Your Readability?
+
+Cheatography is sponsored by Readable.com. Check out Readable.com to make your
+content and copy more engaging and support Cheatography!
+
+Measure Your Readability Now!
+
+Download the Linux Command Line Cheat Sheet
+
+[davechild_linux-command-line]2 Pages
+http://www.cheatography.com/davechild/cheat-sheets/linux-command-line/ //
+media.cheatography.com/storage/thumb/davechild_linux-command-line.750.jpg
+
+PDF (recommended)
+
+  * PDF (2 pages)
+
+Alternative Downloads
+
+  * PDF (black and white)
+  * LaTeX
+
+Share This Cheat Sheet!
+
+Your Download Will Begin Automatically in 5 Seconds.
+Close
+
+ 
+
+Cheatographer
+
+DaveChildDaveChild
+www.getpostcookie.com
+
+Metadata
+
+  * Languages: English
+  * Published: 28th October, 2011
+  * Rated: 5 stars based on 256 ratings
+
+Lists
+
+  * LAMP Cheat Sheet Collection by DaveChild
+
+Favourited By
+
+jburdek romzhke cudacoder kn0w0ne davidshq studiosusmed danilovryu MJB3230
+Giorgos robotir mkpatel
+and 325 more ... ietwat TheLazyHatGuy ChristianMEC manBehindCurtain Heggeg
+lamfmhn95 AHA telmester Zyrmph Convincible Tulsow ricardosilva philipuglow
+indeveler miaoyachun Jahroots cgaolei satyp jteets cysec ehcelino wefam
+pcsontos petedk stepa_k pryl Marcos dweeb123 sberdyug dnz marcosabcarvalho
+atakamoCG Daric torsionsfrei ailurid yiwan Roberto PeterCeeAU Ibrahim Omar
+Andrey99 Kyrin theseth yusausa09 Headphones clolcat jing ahlda kevnm67
+ManuelBorges ssg Zak_Sako fisherhr robbyrob42 dcalixto juliand42 earth2becky
+rhorber wizzdm Verstige Drumkill64 johnd0e Vasiliy salichuma burnside Dhelew40
+Blink_sink Denis DominarMarc Puzzlovaski zungyiu rubensminoru Nazime dragonfly
+juliux_arg infinitone santiago pxlcore moalex tejasshetty.1808 Harinarayan143
+rossT lpsouza jambo domi MKBHD solop drapja kortnie itzelari Sylarvolkoff
+horsedisco laqcixepu xearonet smithdw2026 imjustsarah gugahoi AngelDustFreak
+MadArkitekt tempis MartinesM3 Alessandro Gabrielyan Vavan raj47i grimworld
+woshijpf ritalbradley webniche lausdp tuff FahimHossain frankhy Lucas chiquirf
+hussainale tiaanvz zuzonko king_azul markhuyong gregkang romarin tarimanis
+zayalh14 burak Jouza patakyr seidkarl 0x7b4 jaybaek vinceswann timsamart
+dhollinger jasonlindberg xstreamx jjaab d.falkovsky bbrik nolindom putipong
+capt_redbeard JPaquim sima.taii taii2016 hqzxjczx justinbyrne godspeed23.carl
+benmordecai AdrianLewis andyboy sara pfodo wretched wolfsong mightyhaggis
+zeroluck mandarb nygaardc walsh archerdgreat GreenRobot weisner metalanim
+falonofthetower talx n8w doblak nire0510 AliShaikh cath2o bulletinmybeard
+aejara brazacka MooPuppy flesler hanu reneonguitar ezequiel.devalais
+thegitfather vucheria excentris brennebeck ptitfrap javier-alba Anon
+managedkaos jahofmann fcavassini exoshell TME520 Vecna jereupchurch
+earthlydelight Nico42 mmer2 shawnr FunThomas424242 upendram91 vgf89 talldave
+Ameziel era dctoe robertmorris Freaksed guilhermecruz dontaut chrysa fkorling
+locrian cloud171 DeeJRoth Lasantha chi-zach juanjux ineedmyherbs Kulpe McCloud
+dpnsw leshkin dacheat shash mjorod Alasta Kakolukia sfeiwang josemrivera
+ThibaultGomarin CenturyMan1979 GarthZares hitomi0528 crismblog relizont
+amitb2050 claysmith ronaldmansveld internaciulo RobotusRex Theosis jeremic
+Swahilikid gokure arest ezk Eric Normandeau lyroge ninetails Coldblackice
+PaulBlp Dranzz tuuli ivanfioravanti rajivvishwa PixelHippie ciphan kayalshri
+mambero papousekp oronm dustan ovi_mihai akipta lindmark wdfelippe Epoc
+PierreBdR Huskeraider avalitan mporras petraeus whereisthetea martinku
+cartoonist andshecodes2 simspace dttk onitek cmdmcd2 Huyderman xaled rvalerob
+Jay Taylor rd5coding aaronwolen guslong schrodervictor fire9 Vaibhav blebo
+Bertrand slucas kassius dezos fedesilva sebbu devz gamiclea maintainweb
+Wbbourne naesk zenweasel srb loosh SubCat7564 javovo rexington iknowsbest
+shikee brentscheidt naiquevin CliveWalkden manoelhc anomalophobe arnoldobr
+alexmail93 greggannicott xcjjzh DaveChild lopper69 CyberTron CITguy Pyker danh
+blacklisted nschurdell
+
+Comments
+
+[deleted] [deleted], 10:02 28 Nov 11
+
+Thanks for creating this cheat-sheet Dave. The one thing I missed was "grep
+-o"; Show only the part of a matching line that matches PATTERN
+
+DaveChild DaveChild, 10:02 28 Nov 11
+
+I've added "grep -o" to the cheat sheet :)
+
+a_statham a_statham, 10:02 28 Nov 11
+
+The I/O redirection section could use "2>" and "&>" examples, I always forget
+how to redirect stderr
+
+DaveChild DaveChild, 10:02 28 Nov 11
+
+Good idea - I'll add that (once I remember how they work myself ... :) )
+
+DaveChild DaveChild, 10:02 28 Nov 11
+
+I've updated that section to include stderr redirection. :)
+
+wattslevi wattslevi, 19:51 29 Nov 11
+
+How are the indented lines added several of the cells like Screen Shortcuts?
+RE: http://getsatisfaction.com/cheatography/topics/
+adding_a_two_line_entry_in_a_list
+
+DaveChild DaveChild, 08:35 30 Nov 11
+
+Those indented bits are a "question and answer" format box.
+
+wattslevi wattslevi, 10:30 30 Nov 11
+
+Ah, Q&A means I would be able to cheat with it and use it for two column with
+an extra line. Thanks for the info.
+
+(Replying to my original post seems unintuitive for trying to reply under your
+post, but not to the overall thread... assuming this post as I'm thinking it
+might.)
+
+jim jim, 23:12 30 Nov 11
+
+On the redirects, the one I most commonly use is ignoring errors (2>/dev/null,
+or more succinctly 2>&- ).
+
+For example, if I'm looking for files and I don't care that I haven't access to
+parts of the filesystem, we might do something like:
+
+find / -name "*.html" 2>&-
+
+Tanner Tanner, 10:30 7 Mar 12
+
+ls -h is handy - changes sizes to human readable formats. Goes along good with
+-S. If I'm using it it is generally a ls -alhS
+
+Wane Wane, 07:28 21 Mar 12
+
+I think the "Bash Shortcuts" part is a little misleading. The "ctrl-a",
+"ctrl-e", "ctrl-k" is in emacs mode. But there should be many people preferring
+vim-mode or some thing like that.
+
+Davis Peng Davis Peng, 13:57 22 Mar 12
+
+Thanks a lot for your sheet, I just need such a linux command summary such as
+this sheet.
+
+gamiclea gamiclea, 00:05 2 Jun 12
+
+Awesome job! This will definitely come in handy
+
+wolvverine wolvverine, 11:29 6 Jun 12
+
+download PDF is broken
+
+Arpit Arpit, 10:51 29 Jun 12
+
+Good work. Thanks, its helpful.
+
+Chetan Morajkar Chetan Morajkar, 14:35 6 Aug 12
+
+Hi,
+
+Fantastic good job..
+
+Thanks
+
+Donald J. Tambeau Donald J. Tambeau, 15:23 6 Aug 12
+
+Love your work....it is so ....so helpful! I would like to format a MicroDisk
+using Linux Centros. When I look at the Partition on the MicroDisk, I see the
+following comment....(non-Linux). This makes sense, since I formatted with a
+computer running Win 7! I want to use it on my Linux system but do not know how
+to do it. I tried format /dev/scd1 but no joy!
+Thank you
+Don
+
+Eric Eric, 08:59 7 Aug 12
+
+I'd just like to point out a trick I use with the head and tail commands:
+First, you can designate the number of lines to return, like so: head -100
+filename
+I often use both head and tail together to get a section of a file by piping
+the output of one into the other. The following command gets 100 lines,
+starting 1000 lines before the end of the file:
+tail -1000 filename | head -100
+You could, of course, reverse the commands to get a section near the top of the
+file. To get lines 91-100:
+head -100 filename | tail -10
+
+Mark Mark, 08:53 29 Aug 12
+
+I just wanted to take a moment to thank you for putting this together. This is
+a big help to me I am new to OpenFiler witch I believe uses bash at the core so
+I am of course new to Linux. I didn't really think it would be quite so
+difficult to find resources that one can use to navigate the command line but I
+guess most folks use the GUI. But, I'm not most folks when I bought my first
+IBM 8088 I started with DOS.Anyway, thanks for the time and effort you put into
+this, sorry about digressing there.
+
+Shrinath Shrinath, 13:08 4 Oct 12
+
+Excellent Stuff man.. I think these are the most commonly used commands.. Good
+Effort.
+
+JImmy JImmy, 21:43 11 Oct 12
+
+you need to figure out how to split your command sheet as a pdf
+
+Niloufar Niloufar, 21:43 11 Oct 12
+
+hi!.these are useful cheat sheet .
+
+russ russ, 16:18 22 Oct 12
+
+CTRL-Z sleeps (stops) the running process. fg [#] brings it back to foreground.
+
+top
+CTRL-Z
+ps aux | grep top
+fg
+
+chiahsun chiahsun, 11:14 2 Jan 13
+
+Show human readable format (kb, mb...)
+ls -lh
+
+PierreBdR PierreBdR, 11:35 9 Feb 13
+
+This cheat-sheet is very good! Thanks for that.
+
+However, I don't like the "chmod" commands you are using. I don't think anybody
+should use the numeric version of chmod anymore. Your example "chmod -R 600
+folder", is the best way to lock yourself out of your own folder and loose any
+executable bits on the scripts. I would rather use the symbolic version:
+
+chmod -R u+rw folder # Add read-write for user on all files in folder
+chmod -R og-rwx # Remove read write and execute bits for "other" and "group" on
+all files in folder
+
+And my all-time favorite:
+
+chmod -R og=u-w folder # Give other and group the same rights as user, but
+removing writing rights.
+
+Of course, this also handles t and s bits:
+
+chmod u+s file
+chmod o+t folder
+
+Stylius Stylius, 09:17 15 Feb 13
+
+I would also add the tar command. No sysadmin would survive without it.
+
+To extract tar.gz archive
+tar xvzf archive.tar.gz
+
+To extract tar.bz2 archive
+tar xvjf archive.tar.bz2
+
+To extract tar archive
+tar xvf archive.tar
+
+To create archive
+tar cvzf archive.tar.gz /file_or_folder/to/archive
+
+Sandeep Sandeep, 08:43 16 Feb 13
+
+Nice one...really helpful
+
+John John, 08:43 16 Feb 13
+
+Great resource - thanks for taking the time and trouble to put this out there.
+
+My favorite ls options are '-ltr' . The t sorts files by time, and r reverses
+that, so newest files show up right above the prompt, no matter how long the
+listing is.
+
+daveydave400 daveydave400, 08:43 16 Feb 13
+
+What about CTRL+y to paste the stuff you cut back in? How can you leave that
+out? CTRL+a/e and CTRL+u/y are the pairs I remember.
+
+gymka gymka, 08:44 16 Feb 13
+
+Missing: sed
+find -exec
+
+Jared Jared, 10:33 26 Feb 13
+
+Nice work, but it would be best as a single page PDF.
+
+Darr247 Darr247, 16:31 5 Apr 13
+
+Or if the PDF at least split into 2 pages (so it could be a laminated 2-sided
+sheet) without cutting commands in half.
+
+PastExpiryDotCom PastExpiryDotCom, 18:08 11 Jul 13
+
+This is bash-tastic!
+
+kimcy929 kimcy929, 11:09 9 Aug 13
+
+thank you very much, it is great
+
+Pradeep Pradeep, 15:12 13 Feb 14
+
+There is no commands for shutdown or reboot..
+
+RobertAttfieldDotCom RobertAttfieldDotCom, 11:37 14 Feb 14
+
+Good job on the cheatsheet - this will definitely come in handy for my Linux
+exam next week. Some commands on umask would be a good addition to this
+cheatsheet :).
+
+Bill Bill, 17:30 17 Feb 14
+
+Hi, handy sheet. Just one thing. Find will do a recursive search by default. In
+the find /dir -name name* should be in double quotes if you want it to
+recursively find all files starting with name:
+
+find /dir/ -name "name*"
+
+That's because, without the quotes, the shell will expand the wildcard before
+handing the parameters to find. To unexpected things might happen if you don't
+have the quotes. Please see the examples below:
+
+$ find .
+.
+./name1
+./name2
+./dir1
+./dir1/name3
+./dir1/name1
+./dir1/test3
+./test1
+$ find . -name name*
+find: paths must precede expression: name2
+Usage: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec]
+[path...] [expression]
+$ find . -name "name*"
+./name1
+./name2
+./dir1/name3
+./dir1/name1
+$ touch dir1/fred1
+$ find .
+.
+./name1
+./name2
+./dir1
+./dir1/name3
+./dir1/name1
+./dir1/test3
+./dir1/fred1
+./test1
+$ find . -name name*
+find: paths must precede expression: name2
+Usage: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec]
+[path...] [expression]
+$ find . -name "name*"
+./name1
+./name2
+./dir1/name3
+./dir1/name1
+$ find . -name fred*
+./dir1/fred1
+$ find . -name "fred*"
+./dir1/fred1
+$
+
+Edser Edser, 17:35 17 Feb 14
+
+grep -B#
+
+This shows what you are searching plus additional lines where number is added.
+Great for DHCP lease searching.
+
+No4711 No4711, 09:56 19 Feb 14
+
+I would suggest to put in screen <tty.device> <baudrate> ??? just in case
+anybody needs to connect to some serial console???
+
+Henning Henning, 09:57 19 Feb 14
+
+Great reference!
+The section on Screen is missing "Ctrl-A d" for detaching.
+
+Mads Mads, 08:55 26 Feb 14
+
+Great resource - thanks a lot Dave!
+
+Kabir Kabir, 22:03 10 Mar 14
+
+add task manage comman:
+gnome-system-monitor
+
+Isabel Ambriz Isabel Ambriz, 13:08 30 Apr 14
+
+Command that might be used to test connectivity of Linux box to the Internet,
+get logged on user info, and get TCP/IP configuration info. Can anyone help me?
+
+Aaron Tani Aaron Tani, 08:27 1 May 14
+
+theres also a good one here: http://www.techietek.com/2014/04/29/
+linux-cli-cheat-sheet-wallpaper/
+
+Damien Damien, 10:43 23 Jul 14
+
+I've always found `mkdir -p path/to/directory` to be useful.
+
+snakeroot snakeroot, 10:46 14 Jan 15
+
+head -n1 /etc/issue as a means to access distribution name isn't reliable,
+since the post-login screen could have been customized.
+
+A more reliable version would be sed -nr 's/^PRETTY_NAME=(.*)/\1/p' /etc/
+os-release . This should be true even for distros using legacy init (i.e.,
+current Debian, Gentoo and even Slackware).
+
+jt jt, 12:38 22 Jul 15
+
+ls -h? human readable?
+
+DF DF, 08:31 25 Aug 15
+
+would be good to add Ctrl-left/right for jumping arguments, Ctrl-home/end for
+jumping whole line.
+
+Alex Alex, 15:34 28 Sep 15
+
+'echo $SHELL' actually prints the default shell, 'ps -p $$' will print the
+current shell
+
+John Kershaw John Kershaw, 16:04 28 Mar 16
+
+Love the colour, but could it be a slightly darker/stronger green? It comes out
+almost impossible to read on my colour printer. I tried outputting in
+greyscale, but the green-on green sections are still unreadable. Needs more
+contrast.
+
+Alternatively, change all the green texts to black and keep the backgrounds
+green?
+
+DaveChild DaveChild, 16:05 28 Mar 16
+
+I agree, it's not a great colour. I've changed it.
+
+Felipe Felipe, 19:22 3 Apr 16
+
+Could you add "passwd" to the file? :)
+
+GloObi GloObi, 15:31 4 Apr 16
+
+thank you for this really useful sheet !
+
+The download button seems to be broken though :(
+
+NatalieMoore NatalieMoore, 05:13 10 Apr 16
+
+Hey GloObi, thanks for the heads up about the broken download button on this
+cheatsheet. We'll get it fixed and I'll let you know when its been done. Have a
+great day.
+
+NatalieMoore NatalieMoore, 06:49 13 Apr 16
+
+Hi GloObi,
+
+This is now fixed. Please let me know if you have any more problems.
+
+Nat
+
+d.falkovsky d.falkovsky, 19:54 7 Apr 16
+
+Can't download. Sad.
+
+NatalieMoore NatalieMoore, 05:07 10 Apr 16
+
+Thanks d.falkovsky, I will let Dave know the download button on this cheat
+sheet needs to be fixed. I will let you know once he has fixed it :). Sorry for
+the inconvenience.
+
+NatalieMoore NatalieMoore, 06:48 13 Apr 16
+
+Hi d.falkovsky,
+
+This is now fixed, you should now be able to download. Please let me know if
+you have any more problems.
+
+Nat
+
+d.falkovsky d.falkovsky, 13:15 16 Apr 16
+
+Thank you, Natalie!
+
+ramiissat ramiissat, 13:01 22 Mar 17
+
+Good job Dave, Thank you :)
+
+tejasshetty.1808 tejasshetty.1808, 18:51 8 Jul 17
+
+I think the colour pdf link directs back to the original page
+
+wkthxtn wkthxtn, 21:34 7 Nov 18
+
+Good for quick reference Thank you
+
+hwac121 hwac121, 06:53 13 Dec 18
+
+All links for download are dead, pleas fix this issue ASAP. Would be greatly
+appreciated, thanks.
+
+Chinaguravaiah M Chinaguravaiah M, 05:32 13 Sep 19
+
+thank you very much Dave
+
+Add a Comment
+
+[http://             ]Your Comment
+
+Please enter your name.
+
+Your Name[                    ]
+
+Please enter your email address
+
+Your Email Address[                    ]
+
+Please enter your Comment.
+
+            [                                                  ]
+            [                                                  ]
+            [                                                  ]
+            [                                                  ]
+Your Comment[                                                  ]
+
+Post Your Comment
+
+Related Cheat Sheets
+
+ 
+mod_rewrite Cheat Sheet
+A mod_rewrite Cheat Sheet - a quick reference guide for mod_rewrite, with
+rewrite flags, regular expression syntax and sample rules.
+#DaveChild
+19 Oct 11
+2 Pages
+development, rewrite, mod-rewrite, apache, lamp and 4 more ...
+ 
+Subversion Cheat Sheet
+Subversion cheat sheet
+#DaveChild
+25 Feb 12
+2 Pages
+development, commandline, server, sysadmin, subversion and 4 more ...
+ 
+Linux, Bash, and System Administration Cheat Sheet
+cheat sheet for Linux/Bash/System Administration
+#beersj02
+5 Dec 19
+4 Pages
+bash, linux, commandline, sysadmin
+
+More Cheat Sheets by DaveChild
+
+ 
+Regular Expressions Cheat Sheet
+A quick reference guide for regular expressions (regex), including symbols,
+ranges, grouping, assertions and some sample patterns to get you started.
+#DaveChild
+19 Oct 11
+1 Page
+development, regex, regular, expressions, programming
+ 
+CSS2 Cheat Sheet
+A quick reference guide for CSS, listing selector syntax, properties, units and
+other useful bits of information.
+#DaveChild
+19 Oct 11
+2 Pages
+css, webdesign, web, design, frontend
+ 
+mod_rewrite Cheat Sheet
+A mod_rewrite Cheat Sheet - a quick reference guide for mod_rewrite, with
+rewrite flags, regular expression syntax and sample rules.
+#DaveChild
+19 Oct 11
+2 Pages
+development, rewrite, mod-rewrite, apache, lamp and 4 more ...
+What could you use a cheat sheet for?
+Please login or register and make your own today!
+
+Latest Cheat Sheet
+
+ 
+PYTHON PANDAS Cheat Sheet
+#sanjeev95
+20 Jan 20
+1 Page
+python, pandas
+
+Most Popular Cheat Sheet
+
+ 
+Regular Expressions Cheat Sheet
+A quick reference guide for regular expressions (regex), including symbols,
+ranges, grouping, assertions and some sample patterns to get you started.
+#DaveChild
+19 Oct 11
+1 Page
+development, regex, regular, expressions, programming
+
+Random Cheat Sheet
+
+ 
+MySQL 5.7 Data Types Cheat Sheet
+Data types, storage requirements, and max values updated for mysql 5.7
+#beeftornado
+8 Aug 18
+1 Page
+development, mysql, database
+
+About Cheatography
+
+Cheatography is a collection of 3537 cheat sheets and quick references in 25
+languages for everything from maths to business!
+
+10th JuneOn The Blog
+
+5 Ways Cheatography Benefits Your BusinessCheatography Cheat Sheets are a great
+timesaver for individuals - coders, gardeners, musicians, everybody! But
+businesses can benefit from them as well - read on to find out more.
+
+Recent Activity
+
+sanjeev95 sanjeev95 updated PYTHON PANDAS.
+2 hours 37 mins ago
+FunThomas424242 FunThomas424242 updated Basics zum Raspberry Pi.
+18 hours 16 mins ago
+rsinger9 rsinger9 updated Spanish Classroom Phrases.
+2 days 21 hours ago
+zyqhi zyqhi updated Build-related concepts and utilities..
+3 days 3 hours ago
+lostrose lostrose published Todoist Shortcuts.
+3 days 19 hours ago
+
+Behind the Scenes
+
+If you have any problems, or just want to say hi, you can find us right here:
+DaveChild DaveChild
+SpaceDuck SpaceDuck
+Cheatography Cheatography
+
+Cheatography RSS Feeds
+
+  * Latest Cheat Sheets
+  * Latest Blog Posts
+
+Share Cheatography!
+
+? 2011 - 2020 Cheatography.com   |   CC License   |   Terms   |   Privacy
+Site by Added Bytes

@@ -1,0 +1,146 @@
+﻿Qué es la terminal y para qué sirve
+
+
+La línea de comandos te permite hacer de todo: configuraciones, editar texto, compilar código y utilizar las herramientas que existen dentro de tu sistema operativo.
+
+
+Árbol de directorios y navegación
+
+
+ls: Lista normal en horizontal.
+ls -l: Lista detallada en vertical, compuesta por permisos, autor, grupo, tamaño del archivo, fecha, hora y nombre del archivo.
+ls -lh: Lista legible para cualquiera.
+ls -lha: Muestra todos los archivos y directorios ocultos.
+pwd: Muestra la dirección del directorio en el que uno se encuentra.
+tree: Muestra los directorios como árbol.
+cd: Acceder a un directorio que este dentro del directorio actual.
+cd..: Cambia al directorio padre.
+cd~: Cambia al directorio home.
+Manipulación y modificación del árbol de directorios
+
+
+mkdir: Crea un directorio.
+touch: Crea un archivo. Si no existe el archivo lo va a crear, y si existe le cambia la fecha de modificación.
+mv: Mueve un archivo, te ayuda a modificarlo.
+rm: Elimina archivos o links, no funciona para eliminar un directorio, para esto necesitas un poco más.
+rm -rf: Elimina un directorio recursivamente.
+man: Es el manual de la terminal, puedes utilizarlo cuando tú quieras para entender qué hace un comando y sus banderas. Con espacio pasas una página, - con b te regresas una página y con q sales del manual.
+cp: Copia un archivo a otros directorios.
+pushd y popd: Te permiten navegar entre dos directorios fácilmente.
+
+
+Herramientas básicas
+
+
+more: Te da las primeras líneas de lo que hay en el archivo. Para ver la siguiente página hacemos lo mismo que con el man, utilizamos espacio para avanzar una página.
+cat: Imprime todo el contenido de un archivo en pantalla.
+tail: Te muestra las últimas 10 líneas de un archivo. Puedes agregarle un número con el - y pedir más que 10 líneas.
+
+
+Variables y entorno
+
+
+Cada vez que abrimos la terminal en realidad se está ejecutando un programa que se llama .bash_profile que es una serie de comandos que da de alta unas variables.
+Todos los ejecutables tienen una serie de permisos. 
+less: Similar a more.
+which: Indica la ubicación del comando ejecutable.
+echo: Imprimir una variable.
+alias: Ejecuta una serie de comandos que le pasas antes, funciona para crear variables.
+
+
+Streams
+
+
+Nosotros pasamos unos datos que son procesados y que luego se devuelven de alguna forma. Cuando nosotros enviamos datos, eso es STDIN (standard input), después de eso se ejecuta un script y finalmente hay dos opciones de respuesta STDOUT (standard output) o STDERR (standard error). Es importante entender esto, sobre todo porque es fundamental saber cuándo estás teniendo un error dentro de un proceso.
+
+
+Procesos desde la terminal
+
+
+Cada vez que ejecutamos algo en nuestra computadora es un proceso que está registrado de alguna forma. El orden en que esto se ejecuta y la cercanía del procesador son muy importantes para las prioridades que se le va a dar a dicho proceso.
+top: Permite ver todos los procesos corriendo en el momento. Usando “o” y “cpu” le da un orden y lo ordena de mayor a menor por uso de la cpu.
+kill -9: Acaba por completo con el proceso.
+ps -wA: Lista de procesos que se están ejecutando en el momento.
+ps -wA | grep: Buscara en todas las salidas las líneas con la cadena de caracteres especificada.
+uptime: Muestra cuánto tiempo lleva prendido, los días, los usuarios logueados y la carga promedio.
+
+
+Power Tools: Comandos poderosos de búsqueda
+
+
+Hay muchas herramientas que pueden hacer cosas muy diferentes dentro de la terminal, y cada una de estas tiene también un montón de opciones. 
+grep: Nos ayuda a encontrar cadenas de caracteres dentro de todos los archivos de la ruta que le demos, con expresiones regulares.
+grep -r: Analiza todos los directorios debajo de donde se está. -n el número de línea dentro del archivo en donde encontraremos la línea. -e usa patrones como uno o más patrones, donde las líneas nuevas dentro de los patrones separan cada patrón del siguiente, devolviendo la línea encontrada. | wc -l para contar las líneas con el patrón o palabra pedida.
+find: Busca, dentro del directorio que le digamos. -name especifica el nombre del archivo.
+
+
+Power Tools: curl, zip y tar
+
+
+curl: Emula un navegador. No es un browser como tal, hay uno para terminal pero este solo emula los requests (peticiones) y los trae.
+zip: Agrega o reemplaza las entradas de un archivo zip de la lista, que puede incluir el nombre especial para comprimir la entrada.
+unzip: Extrae los archivos de un zip. -vl enlista el contenido del zip.
+tar: Es un comando similar a zip, junta varios archivos en uno solo sin comprimirlos. Después se le dicta un algoritmo de compresión, que es zip. Ejemplo: tar cfz archivo.tar.gz tipoarchivos. cfz es para comprimir. xfz es para extraer. Ejemplo: tar xfz archivo.tar.gz
+
+
+Pipe
+
+
+Este operador se llama pipe y se escribe con la barra vertical |.
+Ayuda a anidar operaciones. Ejemplo: ls -l | wc -l
+
+
+Crontab: Una herramienta para automatizar tareas desde la terminal
+
+
+Una de las herramientas más potentes de los sistemas UNIX, que nos permite programar la ejecución de diferentes scripts. Con crontab podemos agendar todo lo que necesitemos para facilitar nuestro trabajo y automatizar tareas.
+
+
+contrab -l: Despliega el crontab que tenemos instalado. Cada una de las primeras 5 columnas que tenemos al correr este comando especifica en qué momento exacto queremos que se ejecute la tarea que vamos a definir en la sexta columna.
+Columna 1: minuto 0-59
+Columna 2: hora 0-23
+Columna 3: día del mes 1-31
+Columna 4: mes 1-12
+Columna 5: día de la semana 0-7 (donde 0 y 7 equivalen a domingo)
+Columna 6: script o comando que queremos que se ejecute
+crontab -e: Edita las tareas que tengo agendadas. Con la letra i podemos escribir.
+Recuerda que el crontab se ejecuta si y solo si la computadora está encendida."
+Para guardar y salir cuando utilizas VIM debes usar ESC, luego Shift+ZZ.
+Usar # para escribir un comentario en el crontab.
+
+
+Links
+
+
+Hay un problema muy común: a veces nos estamos quedando sin disco duro y no sabemos qué es lo que nos está quitando tanto espacio. Con el comando du (disk usage) vamos a saber, a partir del lugar donde estemos, cuánto espacio en disco ocupa cada nodo. -h para quesea más fácil de leer. -d 1 (--max-depth=1) es el nivel de profundidad de un nivel.
+Para ahorrar disco duro podemos crear links simbólicos o alias, con ln -s.
+
+
+Usuarios y Permisos
+
+
+La administración de usuarios y permisos cambia mucho entre diferentes sistemas operativos, pero lo que veremos en clase es igual para todos.
+whoami: te dice cuál es el usuario que está operando en ese momento.
+Tipos de permisos:
+r–: permiso de lectura
+rw-: permiso de lectura y escritura
+rwx: permiso de lectura, escritura y ejecución
+Los permisos tienen valores numéricos: r = 4, w = 2, x = 1. Entonces para otorgar permisos debemos darle un número que sea la suma de cada una de estas tres letras.
+Recuerda que cuando haces ls -l, cuando aparezca el listado, podrás ver al comienzo de cada línea cuáles son los permisos. En primer lugar aparecen los permisos del owner (tú), después los del grupo, y finalmente los de todo el mundo.
+
+
+chmod: Cambia los permisos del directorio o elemento.
+Los valores están considerados en lectura, escritura y ejecución:
+Lectura = 4 / Escritura = 2 / Ejecución = 1
+El valor de todos da igual a 7. La D en los permisos se refiere al directorio.
+
+
+Tabla de valores:
+0 – Sin permisos
+1 – Ejecución
+2 – Escritura
+3 – Ejecución y Escritura
+4 – Lectura
+5 – Lectura y Ejecución
+6 – Lectura y Escritura
+7 – Lectura, escritura y ejecución
