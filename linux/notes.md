@@ -1,5 +1,29 @@
 # Commands
 
+# Services
+
+- service --status-all
+
+# Environment Variables
+
+- export VAR=valor: con export se hace accesible a la variable para toda la sesión.
+- export PATH=$PATH:/nuevo/directorio 
+
+
+## ssh
+
+- ssh user@host
+- .ssh/config: en este archivo se encuentran las configuraciones. P.j.:
+
+    Host name
+        HostName XXX.XXX.XXX.XXX
+        IdentifyFile path/file
+        User user
+        Port ###
+    ...
+
+Puede tener configurados cuantos host se quieren. Las opciones obigatorias son **HostName** y **User**.
+
 ## System characteristics
 
 - neofetch
@@ -51,7 +75,10 @@
 
 ## Downloads
 
-- curl url -o filename: descargar un archivo
+- curl url -o filename: descargar un archivo, se usa para realizar pedidos crudos, se recibe la respuesta http, y es lo que se muestra en pantalla.
+- curl -v url: muestra también toda la comunicación htt.
+
+- wget url: Se utiliza más para descargar algún archivo.
 
 ## Compress uncompress
 
@@ -176,6 +203,12 @@ FILE_ERROR
 
 - crontab -l: enlista las tarea programadas.
 - crontab -e: editar el archivo de crontab.
+- sudo service cron start
+
+# at
+
+- at now +2 minutes: ejecutar algo en dos minutos.
+- sudo service atd start
 
 # du
 
@@ -342,3 +375,6 @@ Find expressions in files or stdout.
 
 - rsync -avz $(pwd) $user@$host:/home/quattroc/Descargas/transf
 
+# Email
+
+- echo "Mensaje" | mail -s "Asunto" email@email.com
