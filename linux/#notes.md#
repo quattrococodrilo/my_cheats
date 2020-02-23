@@ -6,7 +6,7 @@
 
 # Environment Variables
 
-- export VAR=valor: con export se hace accesible a la variable para toda la sesiÛn.
+- export VAR=valor: con export se hace accesible a la variable para toda la sesi√≥n.
 - export PATH=$PATH:/nuevo/directorio 
 
 
@@ -76,9 +76,9 @@ Puede tener configurados cuantos host se quieren. Las opciones obigatorias son *
 ## Downloads
 
 - curl url -o filename: descargar un archivo, se usa para realizar pedidos crudos, se recibe la respuesta http, y es lo que se muestra en pantalla.
-- curl -v url: muestra tambiÈn toda la comunicaciÛn htt.
+- curl -v url: muestra tambi√©n toda la comunicaci√≥n htt.
 
-- wget url: Se utiliza m·s para descargar alg˙n archivo.
+- wget url: Se utiliza m√°s para descargar alg√∫n archivo.
 
 ## Compress uncompress
 
@@ -119,7 +119,7 @@ Puede tener configurados cuantos host se quieren. Las opciones obigatorias son *
 
 command_1 < FILE: Manda al STDIN de command_1 el contenido de FILE.
 
-## redirecciÛn de salida
+## redirecci√≥n de salida
 
 - command > FILE - manda el STDOUT a FILE
 - command 1> FILE 2>FILE_ERROR - manda el STDOUT a FILE y el STDERR a
@@ -127,29 +127,29 @@ FILE_ERROR
 - command > FILE 2>&1 - manda, tanto el STDOUT como el STDERR a FILE
 - command >> FILE 2>&1 - manda a concatenar las salidas de STDOUT y STDERR a FILE
 
-# CombinaciÛn de teclas como comando
+# Combinaci√≥n de teclas como comando
 
-- [ctrl]-C - este comando termina el proceso que se est· ejecutando en la terminal, haya o noacabado de ejecutarse.
-- [ctrl]-D - el sistema lo interpreta como _EOF_ (End Of File) y cierra el _stream_ de entrada(STDIN) para un archivo en donde se est· escribiendo desde la termina.
+- [ctrl]-C - este comando termina el proceso que se est√° ejecutando en la terminal, haya o noacabado de ejecutarse.
+- [ctrl]-D - el sistema lo interpreta como _EOF_ (End Of File) y cierra el _stream_ de entrada(STDIN) para un archivo en donde se est√° escribiendo desde la termina.
 
 ## Show files in directory
 
 - ls: list files in a directory.
-- ls -l: lista los archivos con datos de cada nodo, ordenados alfabÈticament. Muestra toda la informaciÛn: usuario, grupo, permisos, tamaÒo, fecha y hora de creaciÛn.
-- ls -lS: lista los contenidos ordenados por tamaÒo.
-- ls -lh: lista los contenidos mostrando los datos legibles f·cilmente (tamaÒo).
+- ls -l: lista los archivos con datos de cada nodo, ordenados alfab√©ticament. Muestra toda la informaci√≥n: usuario, grupo, permisos, tama√±o, fecha y hora de creaci√≥n.
+- ls -lS: lista los contenidos ordenados por tama√±o.
+- ls -lh: lista los contenidos mostrando los datos legibles f√°cilmente (tama√±o).
 - ls -r: lista los archivos ordenados de forma inversa (sirve con las banderas S y `t`).
 - ls -a: lista los contenidos de un directorio incluyendo los archivos oculto.
-- ls -t: Ordena los archivos por fecha de modificaciÛn.
-- ls -x: Ordena los archivos por extensiÛn.
+- ls -t: Ordena los archivos por fecha de modificaci√≥n.
+- ls -x: Ordena los archivos por extensi√≥n.
 - ls -R: Muestra el contenido de todos los subdirectorios de forma recursiva.
-- ls -S: Ordena los resultados por tamaÒo de archivo.
+- ls -S: Ordena los resultados por tama√±o de archivo.
 
-- tree lista recursivamente la estructura de ·rbol de un directorio incluyendo tanto archivoscomo directorios (**NOTA:** No viene pre-instalado asÌ≠ que hay que instalarlo primero con suadministrador de paquetes preferido: para RHEL/CentOS/Fedora yum install tree paraDebian/Mint/Ubuntu apt-get install tree, para OS X `brew install tree`
-- tree -L 1: muestra recursivamente la estructura de √°rbol de un directorio pero s√≥lo hasta elprimer subnivel de directorios
-- tree -a: muestra recursivamente la estructura de √°rbol de un directorio incluyendo tantoarchivos como directorio ocultos
-- tree -d: muestra recursivamente la estructura de √°rbol de un directorio tomando en cuentas√≥lo los directorios
-- tree -dL 1: muestra recursivamente la estructura de √°rbol de un directorio tomando en cuentas√≥lo los directorios y hasta el primer subnivel
+- tree lista recursivamente la estructura de √°rbol de un directorio incluyendo tanto archivoscomo directorios (**NOTA:** No viene pre-instalado as√≠¬≠ que hay que instalarlo primero con suadministrador de paquetes preferido: para RHEL/CentOS/Fedora yum install tree paraDebian/Mint/Ubuntu apt-get install tree, para OS X `brew install tree`
+- tree -L 1: muestra recursivamente la estructura de √É¬°rbol de un directorio pero s√É¬≥lo hasta elprimer subnivel de directorios
+- tree -a: muestra recursivamente la estructura de √É¬°rbol de un directorio incluyendo tantoarchivos como directorio ocultos
+- tree -d: muestra recursivamente la estructura de √É¬°rbol de un directorio tomando en cuentas√É¬≥lo los directorios
+- tree -dL 1: muestra recursivamente la estructura de √É¬°rbol de un directorio tomando en cuentas√É¬≥lo los directorios y hasta el primer subnivel
 
 # Remove files and directories
 
@@ -167,11 +167,11 @@ FILE_ERROR
 
 # Create file
 
-- touch [FILE]: si FILE existe, modifica la hora de ˙ltima modificaciÛn al momento de  ejecuciÛn del comando, si FILE no existe, lo crea.
+- touch [FILE]: si FILE existe, modifica la hora de √∫ltima modificaci√≥n al momento de  ejecuci√≥n del comando, si FILE no existe, lo crea.
 
 # Link
 
-- ln -s [DIRECTORY] [NAME]: crea un _link_ simbÛlico llamado NAME hacia DIRECTORY NAME se comporatar√°como DIRECTORY
+- ln -s [DIRECTORY] [NAME]: crea un _link_ simb√≥lico llamado NAME hacia DIRECTORY NAME se comporatar√É¬°como DIRECTORY
 
 # Clear screen
 
@@ -187,8 +187,8 @@ FILE_ERROR
 
 # Make dir
 
-- mkdir [DIRECTORY]: crea un directorio en la ubicaci√≥n actual
-- mkdir -p [RUTA]: crea un √°rbol de directorios completo que no existe
+- mkdir [DIRECTORY]: crea un directorio en la ubicaci√É¬≥n actual
+- mkdir -p [RUTA]: crea un √É¬°rbol de directorios completo que no existe
 
 # Copy files and directories
 
@@ -197,7 +197,7 @@ FILE_ERROR
 
 # Open files
 
-- open [-a APP] [ FILE | DIRECTORY ]: abre el (archivo o directorio) con la aplicaci√≥n pordefecto en elsistema operativo, si se manda la bandera -a usar√° la APP para abrirl
+- open [-a APP] [ FILE | DIRECTORY ]: abre el (archivo o directorio) con la aplicaci√É¬≥n pordefecto en elsistema operativo, si se manda la bandera -a usar√É¬° la APP para abrirl
 
 # Crontab
 
@@ -212,8 +212,8 @@ FILE_ERROR
 
 # du
 
-- du: desk usage, cu·nto ocupa cada uno de los nodos que se est·n utilizando
-- du -h deepth: du -h 1, la profundidad es 1. tambi√n se puede presentar c√≥mo: du -h --maxdepth=, du -h d 1
+- du: desk usage, cu√°nto ocupa cada uno de los nodos que se est√°n utilizando
+- du -h deepth: du -h 1, la profundidad es 1. tambi√Én se puede presentar c√É¬≥mo: du -h --maxdepth=, du -h d 1
 
 # Text files
 
@@ -249,21 +249,21 @@ FILE_ERROR
 - sed '10,20!d': Print all the lines between 10 and 20 of a file.
 - sed -n '5{p;q}' file: for lines 5 to 10.
 - sed -n '10,$p' file: for lines 10 to last line.
-- sed 's/expresion/expresion/g' [FILE]: sustituye una expresiÛn por otra en un flujo de datos, quiere decir que no modifica el contenido del cual proviene el flujo. s indica la sustituciÛn. g que se realice la acciÛn a lo largo del texto.
+- sed 's/expresion/expresion/g' [FILE]: sustituye una expresi√≥n por otra en un flujo de datos, quiere decir que no modifica el contenido del cual proviene el flujo. s indica la sustituci√≥n. g que se realice la acci√≥n a lo largo del texto.
 sed '$d' [file]: delete last line. 
 
 # grep
 
 Find expressions in files or stdout.
 
-- grep -rni [directory] -e "expresion": buscar en un directorio, recursivamente, una expresi√≥n en los archivos
-- grep -rni "expresion" [directory/file]: search a expresiÛn in file or directory. -i is for case insentisive. -r for recursive. -n show lines numbers. 
-- grep -v expresion: excluir expresiÛn buscada.
+- grep -rni [directory] -e "expresion": buscar en un directorio, recursivamente, una expresi√É¬≥n en los archivos
+- grep -rni "expresion" [directory/file]: search a expresi√≥n in file or directory. -i is for case insentisive. -r for recursive. -n show lines numbers. 
+- grep -v expresion: excluir expresi√≥n buscada.
 
 # awk
 
 - awk -F ';' '{ print $1 }' [FILE.scv]: ';' indica un delimitador, '{ pirnt $1 }' selecciona la primera columna. El comando imprimer la primera columa de un archivo delimitado por ;
-- awk -F ';' 'NR > 1 && $3 >0 { print $1, $3 * $4 }' [FILE.scv]: imprime despuÈs de la lÌnea 1, la columna 1 y en una segunda columna pone el producto de la dolumna 3 por la 4.
+- awk -F ';' 'NR > 1 && $3 >0 { print $1, $3 * $4 }' [FILE.scv]: imprime despu√©s de la l√≠nea 1, la columna 1 y en una segunda columna pone el producto de la dolumna 3 por la 4.
 - awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr: ips que ingresan al sitio en nginx, organizadas y elimina las repetidas. 
 
 # Find files
@@ -273,66 +273,66 @@ Find expressions in files or stdout.
 ### Syntax
 
 - find <startingdirectory> <options> <search term>
-    - <startingdirectory>: es el punto de origen de donde deseas iniciar la b˙squeda.
+    - <startingdirectory>: es el punto de origen de donde deseas iniciar la b√∫squeda.
     - <options>: filtro que deseas usar para buscar tu archivo.
-    - <search term>: este tercer argumento es una continuaciÛn del segundo, donde se especificar· el tÈrmino de b˙squeda relevante. 
+    - <search term>: este tercer argumento es una continuaci√≥n del segundo, donde se especificar√° el t√©rmino de b√∫squeda relevante. 
 
 ### By Name
 
-- find directorio -name "expresion+wildcard" typo typoDeArchivo/f: buscar en un directorio, por el nombre de una expresiÛn, en un archivo.
+- find directorio -name "expresion+wildcard" typo typoDeArchivo/f: buscar en un directorio, por el nombre de una expresi√≥n, en un archivo.
 - fin [directorio] -type f : en el directorio seleccionado busca elementos tipo archivo.
 - fin /var/log -name "\*.log" -type f: busca en la ruta todos los archivos que en su nombre tenga .log
-- find /var/log -iname "\*.LOG" -type f: busca en la ruta todos los archivos que en su nombre tenga .log sin importar las may˙sculas o min˙sculas.
-- find /var/log ! -iname "\*.LOG" -type f: todos los archivos que no tengan extensiÛn .log.
+- find /var/log -iname "\*.LOG" -type f: busca en la ruta todos los archivos que en su nombre tenga .log sin importar las may√∫sculas o min√∫sculas.
+- find /var/log ! -iname "\*.LOG" -type f: todos los archivos que no tengan extensi√≥n .log.
 - find _dir_ -not -iname "\*.LOG" -type f: como el anterior.
 - fin _dir_ -name "_expression_" -delete: elimina el archivo encontrado.
 
 ### By Date Time
 
-- find _dir_ -mtime 10: Encuentra archivos con cambios en los ˙ltimos 10 minutos.
+- find _dir_ -mtime 10: Encuentra archivos con cambios en los √∫ltimos 10 minutos.
 
-- -atime: Tiempo de acceso. Fecha m·s reciente en que el archivo fue leÌdo o escrito, en dÌas.
-- -mtime: Tiempo de modificaciÛn. Fecha m·s reciente en que se modificÛ el archivo.
-- -ctime: Hora de cambio. Fecha m·s reciente en que se actualizaron los metadatos del archivo.
+- -atime: Tiempo de acceso. Fecha m√°s reciente en que el archivo fue le√≠do o escrito, en d√≠as.
+- -mtime: Tiempo de modificaci√≥n. Fecha m√°s reciente en que se modific√≥ el archivo.
+- -ctime: Hora de cambio. Fecha m√°s reciente en que se actualizaron los metadatos del archivo.
 
-- find _dir_ -atime 1: encontrar· todos los archivos a los que se accediÛ hace un dÌa desde el momento actual. Esto significa que se listar·n todos los archivos que fueron leÌdos y/o escritos desde el dÌa anterior.
-- find _dir_ -mtime +2: Podemos hacer que nuestras consultas sean m·s precisas con los signos m·s (+) y menos (ø) precediendo al n˙mero de dÌas. Esto listar· todos los archivos que tienen un tiempo de modificaciÛn de m·s de dos dÌas.
+- find _dir_ -atime 1: encontrar√° todos los archivos a los que se accedi√≥ hace un d√≠a desde el momento actual. Esto significa que se listar√°n todos los archivos que fueron le√≠dos y/o escritos desde el d√≠a anterior.
+- find _dir_ -mtime +2: Podemos hacer que nuestras consultas sean m√°s precisas con los signos m√°s (+) y menos (¬ø) precediendo al n√∫mero de d√≠as. Esto listar√° todos los archivos que tienen un tiempo de modificaci√≥n de m√°s de dos d√≠as.
 
-- <time-descriptor>min: busca cu·ntos minutos han pasado
-- find _dir_ -mmin -1: Esto buscar· archivos que se modificaron hace menos de un minuto. 
+- <time-descriptor>min: busca cu√°ntos minutos han pasado
+- find _dir_ -mmin -1: Esto buscar√° archivos que se modificaron hace menos de un minuto. 
 
-- -newer: se puede usar para comparar la antig¸edad de dos archivos y encontrar el m·s reciente.
+- -newer: se puede usar para comparar la antig√ºedad de dos archivos y encontrar el m√°s reciente.
 
 ### By User and Permissions
 
 - find _dir_ -user _user_ -perm _644_: busca archivos de un usuario con determinados permisos.
 - find _dir_ -group _group_
-- find _dir_ -perm -644: Esto mostrar· todos los archivos que tengan al menos el permiso 644.
+- find _dir_ -perm -644: Esto mostrar√° todos los archivos que tengan al menos el permiso 644.
 
 ### By Type
 
 - find _dir_ -type [TYPE]: Busca por tipo de archivo:
     - f: archivo normal
     - d: directorio o carpeta
-    - l: enlace simbÛlico
+    - l: enlace simb√≥lico
     - c: dispositivos de caracteres
     - b: dispositivos de bloque
-- find _dir_ -type f -mtime +7: busca elementos tipo file modificados hace m·s de 7 dÌas.
+- find _dir_ -type f -mtime +7: busca elementos tipo file modificados hace m√°s de 7 d√≠as.
 - find _dir_ -type f -mtime +7 -exec cp {} _dirTarget_ \;
 - find _dir_ -type f -name "_expresion_"
-- find _dir_ -size [type]: buscar por tamaÒo
+- find _dir_ -size [type]: buscar por tama√±o
     - c: bytes
     - k: kilobytes
     - M: meabytes
     - b:trozos de 512 bytes
     - find ./ -size 200M: encuentra archivos de 200M
-    - find ./ -size +200M: encuentra archivos de m·s de 200M
+    - find ./ -size +200M: encuentra archivos de m√°s de 200M
     - find ./ -size -200M:
     - find ./ -size200M -type f
 
 ### Exec
 
-- find _dir_ -exec: buscar todos los ejecutables guardados en tu disco, utiliza la opciÛn -exec.
+- find _dir_ -exec: buscar todos los ejecutables guardados en tu disco, utiliza la opci√≥n -exec.
 
 ### Read
 
@@ -340,15 +340,15 @@ Find expressions in files or stdout.
 
 ## Utils
 
-- find _dir_ -empty: Buscar archivos y carpetas vacÌos.
+- find _dir_ -empty: Buscar archivos y carpetas vac√≠os.
 
 ## Locate
 
 - locate _file_: busca un archivo en el sistema de archivos, y funciona mediante una base de datos que debe ser actualizada.
     - sudo updatedb: actualiza la base de datos de archivos.
-- locate -b _file_: Puedes usar el argumento -b para una b˙squeda m·s especÌfica. Solo buscar· el ønombre baseø del archivo, enumerando efectivamente solo los archivos que tienen el tÈrmino de b˙squeda en lugar de devolver los directorios que conducen a los archivos.
+- locate -b _file_: Puedes usar el argumento -b para una b√∫squeda m√°s espec√≠fica. Solo buscar√° el ¬ønombre base¬ø del archivo, enumerando efectivamente solo los archivos que tienen el t√©rmino de b√∫squeda en lugar de devolver los directorios que conducen a los archivos.
     - -e muestra entradas de archivos existentes en el momento en que se ejecuta el comando locate.
-    - -q inhabilita la visualizaciÛn de errores encontrados en el proceso de b˙squeda.
+    - -q inhabilita la visualizaci√≥n de errores encontrados en el proceso de b√∫squeda.
     - -c muestra la cantidad de archivos que coinciden, en lugar de los nombres de los archivos.
 - sudo updatedb: actualizar base de datos de archivos.
 
@@ -419,7 +419,7 @@ The following commands will get you the private IP address of your interfaces:
 - ip addr (ip a)
 - hostname -I | awk '{print $1}'
 - ip route get 1.2.3.4 | awk '{print $7}'
-- (Fedora) Wifi-Settingsø click the setting icon next to the Wifi name that you are connected to ø Ipv4 and Ipv6 both can be seen
+- (Fedora) Wifi-Settings¬ø click the setting icon next to the Wifi name that you are connected to ¬ø Ipv4 and Ipv6 both can be seen
 - nmcli -p device show
 
 
